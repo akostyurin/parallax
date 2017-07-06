@@ -12,6 +12,7 @@ import GameplayKit
 class GameScene: SKScene, SKPhysicsContactDelegate {
     var player:SKSpriteNode!
     var touching:Bool!
+    var cameraNode: SKCameraNode!
     override init(size:CGSize){
         super.init(size: size)
         setup()
@@ -31,13 +32,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         physicsBody?.restitution = 0.3
         
     }
-    
-    
-    
-    
-    
-    
-    
     func setup(){
         touching = false
         let playerSize = CGSize(width: 20, height: 20)
@@ -47,6 +41,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         player.position.y = 200
         player.physicsBody =  SKPhysicsBody(rectangleOf: playerSize)
         player.physicsBody?.mass = 0.2
+        
+         cameraNode = SKCameraNode()
+       // print(cameraNode.position.y)
+        cameraNode.position.x = player.position.x
+        cameraNode.position.y = self.frame.size.height / 2
+        camera = cameraNode
+        
+
       }
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         touching = false
@@ -63,9 +65,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     override func update(_ currentTime: TimeInterval) {
         if touching == true {
-            player.physicsBody?.applyForce(CGVector(dx: 100, dy: 0))
+            player.physicsBody?.applyForce(CGVector(dx: 100, dy: 900))
         }
         
+    }
+    override func didSimulatePhysics() {
+        cameraNode.position.x = player.position.x
     }
 
 }
