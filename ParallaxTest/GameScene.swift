@@ -20,7 +20,16 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         fatalError("init(coder:) has not been implemented")
     }
     
-    
+    override func sceneDidLoad() {
+
+        
+        let yPos : CGFloat = self.frame.size.height * 0.10
+        let startPoint = CGPoint(x: 0, y: yPos)
+        let endPoint = CGPoint(x: 8000, y: yPos+90)
+        physicsBody = SKPhysicsBody(edgeFrom: startPoint, to: endPoint)
+        physicsBody?.restitution = 0.3
+        
+    }
     
     
     
@@ -29,6 +38,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     
     func setup(){
+        let playerSize = CGSize(width: 20, height: 20)
+        let player = SKSpriteNode(texture: nil, color: UIColor.red, size: playerSize)
+        self.addChild(player)
+        player.position.x = 200
+        player.position.y = 200
+        player.physicsBody =  SKPhysicsBody(rectangleOf: playerSize)
       }
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
        
