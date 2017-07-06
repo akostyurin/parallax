@@ -10,7 +10,8 @@ import SpriteKit
 import GameplayKit
 
 class GameScene: SKScene, SKPhysicsContactDelegate {
-    
+    var player:SKSpriteNode!
+    var touching:Bool!
     override init(size:CGSize){
         super.init(size: size)
         setup()
@@ -38,18 +39,22 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     
     func setup(){
+        touching = false
         let playerSize = CGSize(width: 20, height: 20)
-        let player = SKSpriteNode(texture: nil, color: UIColor.red, size: playerSize)
+        player = SKSpriteNode(texture: nil, color: UIColor.red, size: playerSize)
         self.addChild(player)
         player.position.x = 200
         player.position.y = 200
         player.physicsBody =  SKPhysicsBody(rectangleOf: playerSize)
+        player.physicsBody?.mass = 0.2
       }
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-       
+        touching = false
+
     }
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-       
+        touching = true
+
     }
     
     
@@ -57,7 +62,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 
     }
     override func update(_ currentTime: TimeInterval) {
-       
+        if touching == true {
+            player.physicsBody?.applyForce(CGVector(dx: 100, dy: 0))
+        }
         
     }
 
