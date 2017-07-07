@@ -18,6 +18,7 @@
 		9A93FE8D1F0E3E0300676F79 /* EndlessParallaxBackgroundCamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A93FE861F0E3E0200676F79 /* EndlessParallaxBackgroundCamera.swift */; };
 		9A93FE8E1F0E3E0300676F79 /* ParallaxBackgroundMover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A93FE871F0E3E0200676F79 /* ParallaxBackgroundMover.swift */; };
 		9A93FE971F0E460900676F79 /* PhysicsCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A93FE961F0E460900676F79 /* PhysicsCategory.swift */; };
+		9AEA1F611F0EC83900E2CC0E /* CameraNodeParallax.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AEA1F601F0EC83900E2CC0E /* CameraNodeParallax.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		9A93FE861F0E3E0200676F79 /* EndlessParallaxBackgroundCamera.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndlessParallaxBackgroundCamera.swift; sourceTree = "<group>"; };
 		9A93FE871F0E3E0200676F79 /* ParallaxBackgroundMover.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParallaxBackgroundMover.swift; sourceTree = "<group>"; };
 		9A93FE961F0E460900676F79 /* PhysicsCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhysicsCategory.swift; sourceTree = "<group>"; };
+		9AEA1F601F0EC83900E2CC0E /* CameraNodeParallax.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraNodeParallax.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 				9A93FE6D1F0E3C4500676F79 /* AppDelegate.swift */,
 				9A93FE711F0E3C4500676F79 /* Actions.sks */,
 				9A93FE731F0E3C4500676F79 /* GameScene.swift */,
+				9AEA1F601F0EC83900E2CC0E /* CameraNodeParallax.swift */,
 				9A93FE751F0E3C4500676F79 /* GameViewController.swift */,
 				9A93FE771F0E3C4500676F79 /* Main.storyboard */,
 				9A93FE7A1F0E3C4500676F79 /* Assets.xcassets */,
@@ -171,6 +174,7 @@
 				9A93FE8D1F0E3E0300676F79 /* EndlessParallaxBackgroundCamera.swift in Sources */,
 				9A93FE8E1F0E3E0300676F79 /* ParallaxBackgroundMover.swift in Sources */,
 				9A93FE6E1F0E3C4500676F79 /* AppDelegate.swift in Sources */,
+				9AEA1F611F0EC83900E2CC0E /* CameraNodeParallax.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -336,6 +340,7 @@
 				9A93FE841F0E3C4500676F79 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

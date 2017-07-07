@@ -33,6 +33,7 @@ class EndlessParallaxBackgroundCamera:SKCameraNode {
     
     override var position : CGPoint {
         didSet {
+            scene?.camera?.position.x = position.x
             if endlessBackgrounds.isEmpty == false {
                 for ebg in endlessBackgrounds {
                     ebg.triggerDraw()
